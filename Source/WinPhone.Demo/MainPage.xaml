@@ -49,7 +49,7 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
 
-            <controls:Accordion HorizontalAlignment="Stretch">
+            <controls:Accordion HorizontalAlignment="Stretch" SelectionMode="ZeroOrOne">
                 <controls:AccordionItem Header="Hello">
                     <controls:AccordionItem.Content>
                         <TextBlock Text="More content"></TextBlock>
