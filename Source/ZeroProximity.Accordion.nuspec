@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>ZeroProximity.Accordion</id>
+    <version>0.0.0.0</version>
+    <authors>Brendan Kowitz</authors>
+    <licenseUrl>http://silverlight.codeplex.com/license</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>A port of the Silverlight Toolkit Accordion control to Windows Store and Windows Phone 8 platforms.</description>
+    <summary>Port of the SLToolkit Accordion control to WinStore and WinPhone8 platforms</summary>
+    <language>en-US</language>
+    <title>Xaml Accordion</title>
+    <projectUrl>http://github.com/brendankowitz/ZeroProximity.Accordion</projectUrl>
+	<tags>sltoolkit winphone winstore windows8 windowsphone</tags>
+  </metadata>
+</package>
