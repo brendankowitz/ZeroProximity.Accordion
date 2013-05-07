@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="WinStore.Demo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinStore.Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:ZeroProximity.Controls"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <controls:Accordion HorizontalAlignment="Stretch">
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <TextBlock Text="More content"></TextBlock>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <TextBlock Text="More content"></TextBlock>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+        </controls:Accordion>
+    </Grid>
+</Page>
