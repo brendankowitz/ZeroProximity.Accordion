@@ -12,7 +12,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace Virgin.FlightSpecials.WinPhone.Infrastructure.Controls.Accordion
+namespace ZeroProximity.Controls
 {
     /// <summary>
     /// Represents a control that applies a layout transformation to its Content.

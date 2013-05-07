@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Virgin.FlightSpecials.WinPhone.Infrastructure.Controls.Accordion
+namespace ZeroProximity.Controls
 {
     internal static class VisualStates
     {

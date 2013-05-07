@@ -6,7 +6,7 @@
 using System.Windows;
 using System.Windows.Controls.Primitives;
 
-namespace Virgin.FlightSpecials.WinPhone.Infrastructure.Controls.Accordion
+namespace ZeroProximity.Controls
 {
     /// <summary>
     /// Represents the header for an accordion item.

@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace Virgin.FlightSpecials.WinPhone.Infrastructure.Controls.Accordion
+namespace ZeroProximity.Controls
 {
     internal sealed partial class ItemsControlHelper
     {

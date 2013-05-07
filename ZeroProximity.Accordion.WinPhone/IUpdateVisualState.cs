@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Virgin.FlightSpecials.WinPhone.Infrastructure.Controls.Accordion
+namespace ZeroProximity.Controls
 {
     /// <summary>
     /// The IUpdateVisualState interface is used to provide the

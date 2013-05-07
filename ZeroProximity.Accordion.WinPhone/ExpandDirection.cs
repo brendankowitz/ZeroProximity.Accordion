@@ -1,4 +1,4 @@
-﻿namespace Virgin.FlightSpecials.WinPhone.Infrastructure.Controls.Accordion
+﻿namespace ZeroProximity.Controls
 {
     /// <summary>
     /// Specifies the direction in which an

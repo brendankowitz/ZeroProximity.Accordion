@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroProximity.Accordion.Win
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinStore.Demo", "WinStore.Demo\WinStore.Demo.csproj", "{1A20F700-CEEC-405D-844A-D6ED261C567D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinPhone", "WinPhone", "{BA79F931-3E01-4029-BEDD-F1698EB02EDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinStore", "WinStore", "{A740DA9F-EAF3-4FF9-BF29-ED23F8AF50F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,5 +102,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{125CE69D-C4FC-4AF8-B258-29077094EF18} = {BA79F931-3E01-4029-BEDD-F1698EB02EDF}
+		{30983115-6837-4842-B583-14DF798017FE} = {BA79F931-3E01-4029-BEDD-F1698EB02EDF}
+		{1A20F700-CEEC-405D-844A-D6ED261C567D} = {A740DA9F-EAF3-4FF9-BF29-ED23F8AF50F7}
+		{C40FAF9F-0D24-4508-8A60-818394562A1D} = {A740DA9F-EAF3-4FF9-BF29-ED23F8AF50F7}
 	EndGlobalSection
 EndGlobal

@@ -18,7 +18,7 @@ using System.Windows.Media.Animation;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Virgin.FlightSpecials.WinPhone.Infrastructure.Controls.Accordion
+namespace ZeroProximity.Controls
 {
     /// <summary>
     /// Represents a control that displays a header and has a collapsible 

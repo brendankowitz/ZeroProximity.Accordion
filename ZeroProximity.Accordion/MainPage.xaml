@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:ZeroProximity.Controls;assembly=ZeroProximity.Accordion.WinPhone"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -47,6 +48,53 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+
+            <controls:Accordion HorizontalAlignment="Stretch">
+                <controls:AccordionItem Header="Hello">
+                    <controls:AccordionItem.Content>
+                        <TextBlock Text="More content"></TextBlock>
+                    </controls:AccordionItem.Content>
+                </controls:AccordionItem>
+
+                <controls:AccordionItem Header="Hello" Background="Tomato">
+                    <controls:AccordionItem.Content>
+                        <StackPanel>
+                            <TextBlock Text="More content"></TextBlock>
+                            <TextBlock Text="More content"></TextBlock>
+                            <TextBlock Text="More content"></TextBlock>
+                            <TextBlock Text="More content"></TextBlock>
+                        </StackPanel>
+                    </controls:AccordionItem.Content>
+                </controls:AccordionItem>
+
+                <controls:AccordionItem Header="Hello">
+                    <controls:AccordionItem.Content>
+                        <StackPanel>
+                            <TextBlock Text="More content"></TextBlock>
+                            <TextBlock Text="More content"></TextBlock>
+                            <TextBlock Text="More content"></TextBlock>
+                            <TextBlock Text="More content"></TextBlock>
+                        </StackPanel>
+                    </controls:AccordionItem.Content>
+                </controls:AccordionItem>
+
+                <controls:AccordionItem Header="Hello">
+                    <controls:AccordionItem.Content>
+                        <TextBlock Text="More content"></TextBlock>
+                    </controls:AccordionItem.Content>
+                </controls:AccordionItem>
+
+                <controls:AccordionItem Header="Hello">
+                    <controls:AccordionItem.Content>
+                        <StackPanel>
+                            <TextBlock Text="More content"></TextBlock>
+                            <TextBlock Text="More content"></TextBlock>
+                            <TextBlock Text="More content"></TextBlock>
+                            <TextBlock Text="More content"></TextBlock>
+                        </StackPanel>
+                    </controls:AccordionItem.Content>
+                </controls:AccordionItem>
+            </controls:Accordion>
 
         </Grid>
 
