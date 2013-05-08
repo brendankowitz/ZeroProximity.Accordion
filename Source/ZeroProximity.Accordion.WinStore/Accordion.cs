@@ -35,7 +35,7 @@ namespace ZeroProximity.Controls
     [TemplateVisualState(Name = VisualStates.StateFocused, GroupName = VisualStates.GroupFocus)]
     [TemplateVisualState(Name = VisualStates.StateUnfocused, GroupName = VisualStates.GroupFocus)]
     [TemplatePart(Name = Presenter, Type = typeof(ItemsPresenter))]
-    public class Accordion : ItemsControl, IUpdateVisualState
+    public class Accordion : ListView, IUpdateVisualState
     {
         /// <summary>
         /// The items that are currently waiting to perform an action.
@@ -1917,25 +1917,34 @@ namespace ZeroProximity.Controls
         /// Provides handling for the MouseEnter event.
         /// </summary>
         /// <param name="e">The data for the event.</param>
-        //protected override void OnMouseEnter(MouseEventArgs e)
-        //{
-        //    if (Interaction.AllowMouseEnter(e))
-        //    {
-        //        Interaction.OnMouseEnterBase();
-        //        base.OnMouseEnter(e);
-        //    }
-        //}
+        protected override void OnPointerEntered(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            if (Interaction.AllowMouseEnter(e))
+            {
+                Interaction.OnMouseEnterBase();
+                base.OnPointerEntered(e);
+            }
+        }
 
         /// <summary>
         /// Provides handling for the MouseLeave event.
         /// </summary>
         /// <param name="e">The data for the event.</param>
-        protected void OnMouseLeave(MouseEventArgs e)
+        protected override void OnPointerCaptureLost(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             if (Interaction.AllowMouseLeave(e))
             {
                 Interaction.OnMouseLeaveBase();
-                //base.OnMouseLeave(e);
+                base.OnPointerCaptureLost(e);
+            }
+        }
+
+        protected override void OnPointerExited(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            if (Interaction.AllowMouseLeave(e))
+            {
+                Interaction.OnMouseLeaveBase();
+                base.OnPointerExited(e);
             }
         }
 
@@ -1943,27 +1952,28 @@ namespace ZeroProximity.Controls
         /// Provides handling for the MouseLeftButtonDown event.
         /// </summary>
         /// <param name="e">The data for the event.</param>
-        //protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
-        //{
-        //    if (Interaction.AllowMouseLeftButtonDown(e))
-        //    {
-        //        Interaction.OnMouseLeftButtonDownBase();
-        //       // base.OnMouseLeftButtonDown(e);
-        //    }
-        //}
+        protected override void OnPointerPressed(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            if (Interaction.AllowMouseLeftButtonDown(e))
+            {
+                Interaction.OnMouseLeftButtonDownBase();
+                base.OnPointerPressed(e);
+            }
+        }
+
 
         /// <summary>
         /// Called before the MouseLeftButtonUp event occurs.
         /// </summary>
         /// <param name="e">The data for the event.</param>
-        //protected override void OnMouseLeftButtonUp(MouseButtonEventArgs e)
-        //{
-        //    if (Interaction.AllowMouseLeftButtonUp(e))
-        //    {
-        //        Interaction.OnMouseLeftButtonUpBase();
-        //        base.OnMouseLeftButtonUp(e);
-        //    }
-        //}
+        protected override void OnPointerReleased(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            if (Interaction.AllowMouseLeftButtonUp(e))
+            {
+                Interaction.OnMouseLeftButtonUpBase();
+                base.OnPointerReleased(e);
+            }
+        }
 
         /// <summary>
         /// Update the visual state of the control.

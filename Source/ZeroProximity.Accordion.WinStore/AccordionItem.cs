@@ -1012,12 +1012,12 @@ namespace ZeroProximity.Controls
         /// Provides handling for the MouseEnter event.
         /// </summary>
         /// <param name="e">The data for the event.</param>
-        protected void OnMouseEnter(MouseEventArgs e)
+        protected override void OnPointerEntered(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             if (_interaction.AllowMouseEnter(e))
             {
                 _interaction.OnMouseEnterBase();
-               // base.OnMouseEnter(e);
+                base.OnPointerEntered(e);
             }
         }
 
@@ -1025,12 +1025,21 @@ namespace ZeroProximity.Controls
         /// Provides handling for the MouseLeave event.
         /// </summary>
         /// <param name="e">The data for the event.</param>
-        protected void OnMouseLeave(MouseEventArgs e)
+        protected override void OnPointerCaptureLost(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             if (_interaction.AllowMouseLeave(e))
             {
                 _interaction.OnMouseLeaveBase();
-                //base.OnMouseLeave(e);
+                base.OnPointerCaptureLost(e);
+            }
+        }
+
+        protected override void OnPointerExited(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            if (_interaction.AllowMouseLeave(e))
+            {
+                _interaction.OnMouseLeaveBase();
+                base.OnPointerExited(e);
             }
         }
 
@@ -1038,27 +1047,28 @@ namespace ZeroProximity.Controls
         /// Provides handling for the MouseLeftButtonDown event.
         /// </summary>
         /// <param name="e">The data for the event.</param>
-        //protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
-        //{
-        //    if (_interaction.AllowMouseLeftButtonDown(e))
-        //    {
-        //        _interaction.OnMouseLeftButtonDownBase();
-        //        base.OnMouseLeftButtonDown(e);
-        //    }
-        //}
+        protected override void OnPointerPressed(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            if (_interaction.AllowMouseLeftButtonDown(e))
+            {
+                _interaction.OnMouseLeftButtonDownBase();
+                base.OnPointerPressed(e);
+            }
+        }
+
 
         /// <summary>
         /// Called before the MouseLeftButtonUp event occurs.
         /// </summary>
         /// <param name="e">The data for the event.</param>
-        //protected override void OnMouseLeftButtonUp(MouseButtonEventArgs e)
-        //{
-        //    if (_interaction.AllowMouseLeftButtonUp(e))
-        //    {
-        //        _interaction.OnMouseLeftButtonUpBase();
-        //        base.OnMouseLeftButtonUp(e);
-        //    }
-        //}
+        protected override void OnPointerReleased(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            if (_interaction.AllowMouseLeftButtonUp(e))
+            {
+                _interaction.OnMouseLeftButtonUpBase();
+                base.OnPointerReleased(e);
+            }
+        }
 
         /// <summary>
         /// Update the visual state of the control.

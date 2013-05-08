@@ -4,8 +4,10 @@ using System.Diagnostics.CodeAnalysis;
 using Windows.Devices.Input;
 using Windows.Foundation;
 using Windows.UI.Core;
+using Windows.UI.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Input;
 
 namespace ZeroProximity.Controls
 {
@@ -76,7 +78,7 @@ namespace ZeroProximity.Controls
         /// Gets or sets the mouse position of the last click.
         /// </summary>
         /// <remarks>The value is relative to the control.</remarks>
-        private Point LastClickPosition { get; set; }
+        private PointerPoint LastClickPosition { get; set; }
 
         /// <summary>
         /// Gets the number of times the control was clicked.
@@ -297,7 +299,7 @@ namespace ZeroProximity.Controls
         /// <returns>
         /// A value indicating whether the event should be handled.
         /// </returns>
-        public bool AllowMouseEnter(MouseEventArgs e)
+        public bool AllowMouseEnter(PointerRoutedEventArgs e)
         {
             if (e == null)
             {
@@ -329,7 +331,7 @@ namespace ZeroProximity.Controls
         /// <returns>
         /// A value indicating whether the event should be handled.
         /// </returns>
-        public bool AllowMouseLeave(MouseEventArgs e)
+        public bool AllowMouseLeave(PointerRoutedEventArgs e)
         {
             if (e == null)
             {
@@ -361,55 +363,59 @@ namespace ZeroProximity.Controls
         /// <returns>
         /// A value indicating whether the event should be handled.
         /// </returns>
-        //public bool AllowMouseLeftButtonDown(MouseButtonEventArgs e)
-        //{
-        //    if (e == null)
-        //    {
-        //        throw new ArgumentNullException("e");
-        //    }
+        public bool AllowMouseLeftButtonDown(PointerRoutedEventArgs e)
+        {
+            if (e == null)
+            {
+                throw new ArgumentNullException("e");
+            }
 
-        //    bool enabled = Control.IsEnabled;
-        //    if (enabled)
-        //    {
-        //        // Get the current position and time
-        //        DateTime now = DateTime.UtcNow;
-        //        Point position = e.GetPosition(Control);
+            bool enabled = Control.IsEnabled;
+            if (enabled)
+            {
+                // Get the current position and time
+                DateTime now = DateTime.UtcNow;
+                PointerPoint position = e.GetCurrentPoint(Control);
 
-        //        // Compute the deltas from the last click
-        //        double timeDelta = (now - LastClickTime).TotalMilliseconds;
-        //        Point lastPosition = LastClickPosition;
-        //        double dx = position.X - lastPosition.X;
-        //        double dy = position.Y - lastPosition.Y;
-        //        double distance = dx * dx + dy * dy;
+                // Compute the deltas from the last click
+                double timeDelta = (now - LastClickTime).TotalMilliseconds;
+                PointerPoint lastPosition = LastClickPosition;
 
-        //        // Check if the values fall under the sequential click temporal
-        //        // and spatial thresholds
-        //        if (timeDelta < SequentialClickThresholdInMilliseconds &&
-        //            distance < SequentialClickThresholdInPixelsSquared)
-        //        {
-        //            // TODO: Does each click have to be within the single time
-        //            // threshold on WPF?
-        //            ClickCount++;
-        //        }
-        //        else
-        //        {
-        //            ClickCount = 1;
-        //        }
+                if (lastPosition != null)
+                {
+                    double dx = position.Position.X - lastPosition.Position.X;
+                    double dy = position.Position.Y - lastPosition.Position.Y;
+                    double distance = dx*dx + dy*dy;
 
-        //        // Set the new position and time
-        //        LastClickTime = now;
-        //        LastClickPosition = position;
+                    // Check if the values fall under the sequential click temporal
+                    // and spatial thresholds
+                    if (timeDelta < SequentialClickThresholdInMilliseconds &&
+                        distance < SequentialClickThresholdInPixelsSquared)
+                    {
+                        // TODO: Does each click have to be within the single time
+                        // threshold on WPF?
+                        ClickCount++;
+                    }
+                    else
+                    {
+                        ClickCount = 1;
+                    }
+                }
 
-        //        // Raise the event
-        //        IsPressed = true;
-        //    }
-        //    else
-        //    {
-        //        ClickCount = 1;
-        //    }
+                // Set the new position and time
+                LastClickTime = now;
+                LastClickPosition = position;
 
-        //    return enabled;
-        //}
+                // Raise the event
+                IsPressed = true;
+            }
+            else
+            {
+                ClickCount = 1;
+            }
+
+            return enabled;
+        }
 
         /// <summary>
         /// Base implementation of the virtual MouseLeftButtonDown event
@@ -429,20 +435,20 @@ namespace ZeroProximity.Controls
         /// <returns>
         /// A value indicating whether the event should be handled.
         /// </returns>
-        //public bool AllowMouseLeftButtonUp(MouseButtonEventArgs e)
-        //{
-        //    if (e == null)
-        //    {
-        //        throw new ArgumentNullException("e");
-        //    }
+        public bool AllowMouseLeftButtonUp(PointerRoutedEventArgs e)
+        {
+            if (e == null)
+            {
+                throw new ArgumentNullException("e");
+            }
 
-        //    bool enabled = Control.IsEnabled;
-        //    if (enabled)
-        //    {
-        //        IsPressed = false;
-        //    }
-        //    return enabled;
-        //}
+            bool enabled = Control.IsEnabled;
+            if (enabled)
+            {
+                IsPressed = false;
+            }
+            return enabled;
+        }
 
         /// <summary>
         /// Base implementation of the virtual MouseLeftButtonUp event handler.
