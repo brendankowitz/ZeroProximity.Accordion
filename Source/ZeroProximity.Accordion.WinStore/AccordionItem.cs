@@ -595,7 +595,7 @@ namespace ZeroProximity.Controls
         /// Schedules the specified action.
         /// </summary>
         /// <param name="action">The action to be performed.</param>
-        private void Schedule(AccordionAction action)
+        private async void Schedule(AccordionAction action)
         {
             if (Windows.ApplicationModel.DesignMode.DesignModeEnabled && ExpandSite != null)
             {
@@ -625,7 +625,7 @@ namespace ZeroProximity.Controls
             }
             else
             {
-                bool directExecute = ParentAccordion.ScheduleAction(this, action);
+                bool directExecute = await ParentAccordion.ScheduleAction(this, action);
                 if (directExecute)
                 {
                     StartAction();
@@ -785,6 +785,8 @@ namespace ZeroProximity.Controls
                                           from state in (stategroup.States)
                                           where state.Name == VisualStates.StateCollapsed
                                           select state.Storyboard).FirstOrDefault();
+
+                    ExpandStoryboard.Begin();
                 }
                 else
                 {

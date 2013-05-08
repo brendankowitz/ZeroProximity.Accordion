@@ -11,6 +11,7 @@ using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
+using System.Threading.Tasks;
 using Windows.Devices.Input;
 using Windows.Foundation;
 using Windows.UI.Core;
@@ -144,7 +145,7 @@ namespace ZeroProximity.Controls
         /// </summary>
         /// <param name="d">Accordion that changed its ExpandDirection.</param>
         /// <param name="e">Event arguments.</param>
-        private static void OnExpandDirectionPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private async static void OnExpandDirectionPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             Accordion source = (Accordion)d;
             ExpandDirection expandDirection = (ExpandDirection)e.NewValue;
@@ -180,7 +181,7 @@ namespace ZeroProximity.Controls
             source.SetPanelOrientation();
 
             // schedule a layout pass after this panel has had time to rearrange.
-            source.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, source.LayoutChildren);
+            await source.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, source.LayoutChildren);
         }
         #endregion public ExpandDirection ExpandDirection
 
@@ -638,25 +639,6 @@ namespace ZeroProximity.Controls
         #endregion public IList<int> SelectedIndices
 
         #region public Style ItemContainerStyle
-        /// <summary>
-        /// Gets or sets the Style that is applied to the container element
-        /// generated for each item.
-        /// </summary>
-        public Style ItemContainerStyle
-        {
-            get { return GetValue(ItemContainerStyleProperty) as Style; }
-            set { SetValue(ItemContainerStyleProperty, value); }
-        }
-
-        /// <summary>
-        /// Identifies the ItemContainerStyle dependency property.
-        /// </summary>
-        public static readonly DependencyProperty ItemContainerStyleProperty =
-            DependencyProperty.Register(
-                "ItemContainerStyle",
-                typeof(Style),
-                typeof(Accordion),
-                new PropertyMetadata(null, OnItemContainerStylePropertyChanged));
 
         /// <summary>
         /// ItemContainerStyleProperty property changed handler.
@@ -815,7 +797,7 @@ namespace ZeroProximity.Controls
         /// </summary>
         /// <param name="element">The element used to display the specified item.</param>
         /// <param name="item">The item to display.</param>
-        protected override void PrepareContainerForItemOverride(DependencyObject element, object item)
+        protected async override void PrepareContainerForItemOverride(DependencyObject element, object item)
         {
             AccordionItem accordionItem = element as AccordionItem;
 
@@ -934,7 +916,7 @@ namespace ZeroProximity.Controls
             SetLockedProperties();
 
             // At this moment this item has not been added to the panel yet, so we schedule a layoutpass
-            Dispatcher.RunAsync(CoreDispatcherPriority.Normal, LayoutChildren);
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, LayoutChildren);
         }
 
         /// <summary>
@@ -1675,7 +1657,7 @@ namespace ZeroProximity.Controls
         /// <param name="action">The action it is scheduling for.</param>
         /// <returns>True if the item is allowed to proceed without scheduling, 
         /// false if the item needs to wait for a signal to execute the action.</returns>
-        internal virtual bool ScheduleAction(AccordionItem item, AccordionAction action)
+        internal async virtual Task<bool> ScheduleAction(AccordionItem item, AccordionAction action)
         {
             if (SelectionSequence == SelectionSequence.CollapseBeforeExpand)
             {
@@ -1688,7 +1670,7 @@ namespace ZeroProximity.Controls
                 }
                 if (_currentActioningItem == null)
                 {
-                    Dispatcher.RunAsync(CoreDispatcherPriority.Normal, StartNextAction);
+                    await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, StartNextAction);
                 }
 
                 return false;

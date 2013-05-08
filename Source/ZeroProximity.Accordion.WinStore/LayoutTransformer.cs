@@ -33,9 +33,6 @@ namespace ZeroProximity.Controls
         /// </summary>
         private const string PresenterName = "Presenter";
 
-#if !SILVERLIGHT
-        new  // Hide base class property of same name
-#endif
         /// <summary>
         /// Gets or sets the layout transform to apply on the LayoutTransformer 
         /// control content.
@@ -49,9 +46,6 @@ namespace ZeroProximity.Controls
             set { SetValue(LayoutTransformProperty, value); }
         }
 
-#if !SILVERLIGHT
-        new  // Hide base class property of same name
-#endif
         /// <summary>
         /// Identifies the LayoutTransform DependencyProperty.
         /// </summary>

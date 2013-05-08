@@ -414,7 +414,7 @@
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Expanded">
-                                    <Storyboard>
+                                    <Storyboard x:Name="ExpandStoryBoard">
                                         <!--<DoubleAnimation From="0.0" To="1.0" BeginTime="00:00:00" Duration="00:00:00.3" Storyboard.TargetName="ExpandSite"
 							                    Storyboard.TargetProperty="Percentage" />-->
 
@@ -422,22 +422,20 @@
                                             <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="0"/>
                                             <DiscreteObjectKeyFrame KeyTime="00:00:00.05" Value="0.1"/>
                                             <DiscreteObjectKeyFrame KeyTime="00:00:00.1" Value="0.3"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.15" Value="0.4"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.2" Value="0.5"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.25" Value="0.7"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.27" Value="0.9"/>
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.15" Value="0.5"/>
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.2" Value="0.8"/>
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.25" Value="0.9"/>
                                             <DiscreteObjectKeyFrame KeyTime="00:00:00.3" Value="1"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         
                                         <!--<DoubleAnimationUsingKeyFrames
-							  BeginTime="00:00:00"
-							  Storyboard.TargetName="ExpandSite"
-							  Storyboard.TargetProperty="(ExpandableContentControl.Percentage)">
+							                  BeginTime="00:00:00"
+							                  Storyboard.TargetProperty="Percentage" Storyboard.TargetName="ExpandSite">
                                             
-                                            <SplineDoubleKeyFrame
-								  KeyTime="00:00:00.3"
-								  KeySpline="0.2,0,0,1"
-								  Value="1" />
+                                              <SplineDoubleKeyFrame
+								                  KeyTime="00:00:00.3"
+								                  KeySpline="0.2,0,0,1"
+								                  Value="1" />
                                             
                                         </DoubleAnimationUsingKeyFrames>-->
                                     </Storyboard>

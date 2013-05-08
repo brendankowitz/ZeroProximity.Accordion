@@ -19,17 +19,20 @@
  
   <Target Name="Package">
     <ItemGroup>
-      <PhoneMainBinaries Include="$(BaseDir)ZeroProximity.Accordion.WinPhone\Bin\$(Configuration)\**\*.*" />
-      <StoreMainBinaries Include="$(BaseDir)ZeroProximity.Accordion.WinStore\Bin\$(Configuration)\**\*.*" />
+      <PhoneMainBinaries Include="$(BaseDir)ZeroProximity.Accordion.WinPhone\Bin\$(Configuration)\*.*" />
+      <StoreMainBinaries Include="$(BaseDir)ZeroProximity.Accordion.WinStore\Bin\$(Configuration)\*.*"  Exclude="*.xaml" />
+	  <StoreMainThemes Include="$(BaseDir)ZeroProximity.Accordion.WinStore\Bin\$(Configuration)\**\*.xaml" />
     </ItemGroup>
  
     <!-- First copy the nuspec template files to the package dir -->
     <Copy SourceFiles="$(BaseDir)\ZeroProximity.Accordion.nuspec" DestinationFolder="$(PackageDir)temp\ZeroProximityAccordion" />
  
     <!-- Copy the source files to the package dir -->
-    <Copy SourceFiles="@(PhoneMainBinaries)" DestinationFolder="$(PackageDir)temp\ZeroProximityAccordion\lib\windowsphone8%(RecursiveDir)" />
+    <Copy SourceFiles="@(PhoneMainBinaries)" DestinationFolder="$(PackageDir)temp\ZeroProximityAccordion\lib\windowsphone8\%(RecursiveDir)" />
 	
-	<Copy SourceFiles="@(StoreMainBinaries)" DestinationFolder="$(PackageDir)temp\ZeroProximityAccordion\lib\windows8%(RecursiveDir)" />
+	<Copy SourceFiles="@(StoreMainBinaries)" DestinationFolder="$(PackageDir)temp\ZeroProximityAccordion\lib\windows8\%(RecursiveDir)" />
+	
+	<Copy SourceFiles="@(StoreMainThemes)" DestinationFolder="$(PackageDir)temp\ZeroProximityAccordion\lib\windows8\ZeroProximity.Accordion.WinStore\Themes"/>
  
     <!-- Get the version number of the main FV assembly to insert into the nuspec files -->
     <GetAssemblyIdentity AssemblyFiles="$(PackageDir)temp\ZeroProximityAccordion\lib\windowsphone8\ZeroProximity.Accordion.WinPhone.dll">
@@ -45,5 +48,7 @@
  
     <Exec WorkingDirectory="$(BuildDir)" 
           Command="$(MSBuildProjectDirectory)\Lib\Nuget\nuget.exe pack -OutputDirectory $(PackageDir)  $(PackageDir)temp\ZeroProximityAccordion\ZeroProximity.Accordion.nuspec " />
+		  
+	<RemoveDir Directories="$(PackageDir)temp" />
   </Target>
 </Project>
