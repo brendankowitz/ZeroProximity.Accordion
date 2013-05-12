@@ -862,52 +862,6 @@ namespace ZeroProximity.Controls
         }
 
         /// <summary>
-        /// Provides handling for the KeyDown event.
-        /// </summary>
-        /// <param name="e">Key event args.</param>
-        //protected void OnKeyDown(KeyEventArgs e)
-        //{
-        //    base.OnKeyDown(e);
-
-        //    if (e.Handled || !IsEnabled || IsLocked)
-        //    {
-        //        return;
-        //    }
-
-        //    // Some keys (e.g. Left/Right) need to be translated in RightToLeft mode
-        //    Key invariantKey = InteractionHelper.GetLogicalKey(FlowDirection, e.Key);
-
-        //    bool isSelected = IsSelected;
-        //    switch (ExpandDirection)
-        //    {
-        //        case ExpandDirection.Down:
-        //            if ((isSelected && invariantKey == Key.Up) || (!isSelected && invariantKey == Key.Down))
-        //            {
-        //                IsSelected = !isSelected;
-        //            }
-        //            break;
-        //        case ExpandDirection.Up:
-        //            if ((isSelected && invariantKey == Key.Down) || (!isSelected && invariantKey == Key.Up))
-        //            {
-        //                IsSelected = !isSelected;
-        //            }
-        //            break;
-        //        case ExpandDirection.Left:
-        //            if ((isSelected && invariantKey == Key.Right) || (!isSelected && invariantKey == Key.Left))
-        //            {
-        //                IsSelected = !isSelected;
-        //            }
-        //            break;
-        //        case ExpandDirection.Right:
-        //            if ((isSelected && invariantKey == Key.Left) || (!isSelected && invariantKey == Key.Right))
-        //            {
-        //                IsSelected = !isSelected;
-        //            }
-        //            break;
-        //    }
-        //}
-
-        /// <summary>
         /// Raises the Selected event when the IsSelected property changes 
         /// from false to true.
         /// </summary>

@@ -9,7 +9,37 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <controls:Accordion HorizontalAlignment="Stretch">
+        
+        <!--<ScrollViewer HorizontalScrollBarVisibility="Disabled">-->
+        <controls:Accordion HorizontalAlignment="Stretch" SelectionMode="ZeroOrOne">
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <TextBlock Text="More content"></TextBlock>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello" FontSize="55">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
             <controls:AccordionItem Header="Hello">
                 <controls:AccordionItem.Content>
                     <TextBlock Text="More content"></TextBlock>
@@ -27,6 +57,17 @@
                 </controls:AccordionItem.Content>
             </controls:AccordionItem>
 
+            <controls:AccordionItem Header="Hello" FontSize="55">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
             <controls:AccordionItem Header="Hello">
                 <controls:AccordionItem.Content>
                     <StackPanel>
@@ -54,6 +95,165 @@
                     </StackPanel>
                 </controls:AccordionItem.Content>
             </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello" FontSize="55">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <TextBlock Text="More content"></TextBlock>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello" FontSize="55">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <TextBlock Text="More content"></TextBlock>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello" FontSize="55">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <TextBlock Text="More content"></TextBlock>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello" FontSize="55">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <TextBlock Text="More content"></TextBlock>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+            <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                        <TextBlock Text="More content"></TextBlock>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+
+
         </controls:Accordion>
+        <!--</ScrollViewer>-->
     </Grid>
 </Page>
