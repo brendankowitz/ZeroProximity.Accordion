@@ -49,6 +49,7 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
 
+            <ScrollViewer>
             <controls:Accordion HorizontalAlignment="Stretch" SelectionMode="ZeroOrOne">
                 <controls:AccordionItem Header="Hello">
                     <controls:AccordionItem.Content>
@@ -84,18 +85,175 @@
                     </controls:AccordionItem.Content>
                 </controls:AccordionItem>
 
-                <controls:AccordionItem Header="Hello">
+                <controls:AccordionItem Header="Large list">
                     <controls:AccordionItem.Content>
                         <StackPanel>
-                            <TextBlock Text="More content"></TextBlock>
-                            <TextBlock Text="More content"></TextBlock>
-                            <TextBlock Text="More content"></TextBlock>
-                            <TextBlock Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+                            <TextBlock FontSize="40" Text="More content"></TextBlock>
+
                         </StackPanel>
                     </controls:AccordionItem.Content>
                 </controls:AccordionItem>
             </controls:Accordion>
-
+            </ScrollViewer>
         </Grid>
 
         <!--Uncomment to see an alignment grid to help ensure your controls are
