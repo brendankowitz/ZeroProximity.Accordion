@@ -10,59 +10,59 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:accordion="using:ZeroProximity.Controls">
 
-  <Style TargetType="accordion:Accordion">
-    <Setter Property="Foreground" Value="#FF000000" />
-    <Setter Property="BorderBrush" Value="#FFEAEAEA"/>
-    <Setter Property="HorizontalAlignment" Value="Left" />
-    <Setter Property="VerticalAlignment" Value="Top" />
-    <Setter Property="HorizontalContentAlignment" Value="Left" />
-    <Setter Property="VerticalContentAlignment" Value="Top" />
-    <Setter Property="BorderThickness" Value="1" />
-    <Setter Property="Padding" Value="0" />
-    <Setter Property="Margin" Value="0" />
-    <Setter Property="IsTabStop" Value="False" />
-    <Setter Property="TabNavigation" Value="Once" />
-    <!-- Accordion expects a stackpanel to layout its children. -->
-    <Setter Property="ItemsPanel">
-      <Setter.Value>
-        <ItemsPanelTemplate>
-          <StackPanel VerticalAlignment="Top" />
-        </ItemsPanelTemplate>
-      </Setter.Value>
-    </Setter>
-    <Setter Property="Template">
-      <Setter.Value>
-        <ControlTemplate TargetType="accordion:Accordion">
-          <Grid x:Name="Root">
-            <VisualStateManager.VisualStateGroups>
-              <!-- common states -->
-              <VisualStateGroup
+    <Style TargetType="accordion:Accordion">
+        <Setter Property="Foreground" Value="#FF000000" />
+        <Setter Property="BorderBrush" Value="#FFEAEAEA"/>
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="TabNavigation" Value="Once" />
+        <!-- Accordion expects a stackpanel to layout its children. -->
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel VerticalAlignment="Top" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="accordion:Accordion">
+                    <Grid x:Name="Root">
+                        <VisualStateManager.VisualStateGroups>
+                            <!-- common states -->
+                            <VisualStateGroup
                 x:Name="CommonStates">
-                <VisualState
+                                <VisualState
                   x:Name="Normal" />
-                <VisualState
+                                <VisualState
                   x:Name="Pressed" />
-                <VisualState
+                                <VisualState
                   x:Name="MouseOver" />
-                <VisualState
+                                <VisualState
                   x:Name="Disabled" />
-              </VisualStateGroup>
-              <!-- focus states -->
-              <VisualStateGroup
+                            </VisualStateGroup>
+                            <!-- focus states -->
+                            <VisualStateGroup
                 x:Name="FocusStates">
-                <VisualState
+                                <VisualState
                   x:Name="Focused" />
-                <VisualState
+                                <VisualState
                   x:Name="Unfocused" />
-              </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>
-            <Border
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border
               x:Name="Border"
               BorderThickness="{TemplateBinding BorderThickness}"
               Padding="{TemplateBinding Padding}"
               Background="{TemplateBinding Background}"
               BorderBrush="{TemplateBinding BorderBrush}">
-              <!--<ScrollViewer 
+                            <!--<ScrollViewer 
                 IsTabStop="False"
                 HorizontalScrollBarVisibility="Disabled"
                 VerticalScrollBarVisibility="Auto"
@@ -71,14 +71,14 @@
                 Margin="0"
                 Padding="0"
                 BorderThickness="0">-->
-                <ItemsPresenter x:Name="Presenter" />
-              <!--</ScrollViewer>-->
-              </Border>
-          </Grid>
-        </ControlTemplate>
-      </Setter.Value>
-    </Setter>
-  </Style>
+                            <ItemsPresenter x:Name="Presenter" />
+                            <!--</ScrollViewer>-->
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 
     <Style TargetType="accordion:AccordionButton">
@@ -390,22 +390,23 @@
                                 </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Collapsed">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Percentage" Storyboard.TargetName="ExpandSite">
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="1"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.05" Value="0.9"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.1" Value="0.7"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.15" Value="0.5"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.2" Value="0.3"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.25" Value="0.1"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.3" Value="0"/>
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames
+                                          BeginTime="00:00:00"
+                                          Storyboard.TargetName="ExpandSite"
+                                            EnableDependentAnimation="True"
+                                          Storyboard.TargetProperty="(ExpandableContentControl.Percentage)">
+                                            <SplineDoubleKeyFrame
+                                            KeyTime="00:00:00.3"
+                                            KeySpline="0.2,0,0,1"
+                                            Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames
-                      BeginTime="00:00:00.3"
-                      Duration="00:00:00"
-                      Storyboard.TargetName="ExpandSite"
-                      Storyboard.TargetProperty="(UIElement.Visibility)">
+                                              BeginTime="00:00:00.3"
+                                              Duration="00:00:00"
+                                              Storyboard.TargetName="ExpandSite"
+                                              Storyboard.TargetProperty="(UIElement.Visibility)">
                                             <DiscreteObjectKeyFrame
-                        KeyTime="00:00:00">
+                                                KeyTime="00:00:00">
                                                 <DiscreteObjectKeyFrame.Value>
                                                     <Visibility>Collapsed</Visibility>
                                                 </DiscreteObjectKeyFrame.Value>
@@ -415,29 +416,19 @@
                                 </VisualState>
                                 <VisualState x:Name="Expanded">
                                     <Storyboard x:Name="ExpandStoryBoard">
-                                        <!--<DoubleAnimation From="0.0" To="1.0" BeginTime="00:00:00" Duration="00:00:00.3" Storyboard.TargetName="ExpandSite"
-							                    Storyboard.TargetProperty="Percentage" />-->
 
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Percentage" Storyboard.TargetName="ExpandSite">
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="0"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.05" Value="0.1"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.1" Value="0.3"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.15" Value="0.5"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.2" Value="0.8"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.25" Value="0.9"/>
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00.3" Value="1"/>
-                                        </ObjectAnimationUsingKeyFrames>
-                                        
-                                        <!--<DoubleAnimationUsingKeyFrames
-							                  BeginTime="00:00:00"
-							                  Storyboard.TargetProperty="Percentage" Storyboard.TargetName="ExpandSite">
-                                            
-                                              <SplineDoubleKeyFrame
+                                        <DoubleAnimationUsingKeyFrames
+							                BeginTime="00:00:00"
+                                            EnableDependentAnimation="True"
+							                Storyboard.TargetProperty="Percentage" 
+                                            Storyboard.TargetName="ExpandSite">
+
+                                            <SplineDoubleKeyFrame
 								                  KeyTime="00:00:00.3"
 								                  KeySpline="0.2,0,0,1"
 								                  Value="1" />
-                                            
-                                        </DoubleAnimationUsingKeyFrames>-->
+
+                                        </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
