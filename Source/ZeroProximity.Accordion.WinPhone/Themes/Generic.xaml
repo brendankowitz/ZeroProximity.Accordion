@@ -64,7 +64,7 @@
               Padding="{TemplateBinding Padding}"
               Background="{TemplateBinding Background}"
               BorderBrush="{TemplateBinding BorderBrush}">
-              <ScrollViewer 
+              <!--<ScrollViewer 
                 IsTabStop="False"
                 HorizontalScrollBarVisibility="Disabled"
                 VerticalScrollBarVisibility="Disabled"
@@ -72,9 +72,9 @@
                 BorderBrush="Transparent"
                 Margin="0"
                 Padding="0"
-                BorderThickness="0">
+                BorderThickness="0">-->
                 <ItemsPresenter x:Name="Presenter" />
-              </ScrollViewer>
+              <!--</ScrollViewer>-->
               </Border>
           </Grid>
         </ControlTemplate>
