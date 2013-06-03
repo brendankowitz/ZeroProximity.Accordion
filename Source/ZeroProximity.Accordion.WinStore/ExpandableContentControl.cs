@@ -26,6 +26,8 @@ namespace ZeroProximity.Controls
         /// part will be clipped.
         /// </summary>
         private readonly RectangleGeometry _clippingRectangle;
+
+        public bool AllowMeasureOverrideCache { get; set; }
         
         #region TemplateParts
         /// <summary>
@@ -141,7 +143,11 @@ namespace ZeroProximity.Controls
         public double Percentage
         {
             get { return (double)GetValue(PercentageProperty); }
-            set { SetValue(PercentageProperty, value); }
+            set
+            {
+                SetValue(PercentageProperty, value);
+                sizeCache = null;
+            }
         }
 
         /// <summary>
@@ -209,6 +215,8 @@ namespace ZeroProximity.Controls
         /// </summary>
         public event SizeChangedEventHandler ContentSizeChanged;
 
+        private Size? sizeCache = null;
+        private double sizeCachePercentage = -1;
         /// <summary>
         /// Does a measure pass of the control and its content. The content will
         /// get measured according to the TargetSize and is clipped.
@@ -225,6 +233,8 @@ namespace ZeroProximity.Controls
             // this control will always follow the TargetSize
             // and allow its content to take all the space it needs
 
+            if (sizeCache != null && Percentage == sizeCachePercentage) return sizeCache.Value;
+
             if (ContentSite != null)
             {
                 // we will adhere to the available size, to allow scrollbars
@@ -237,6 +247,11 @@ namespace ZeroProximity.Controls
                     desiredSize = CalculateDesiredContentSize();
                 }
                 MeasureContent(desiredSize);
+                if (AllowMeasureOverrideCache)
+                {
+                    sizeCache = ContentSite.DesiredSize;
+                    sizeCachePercentage = Percentage;
+                }
                 return ContentSite.DesiredSize;
             }
             return new Size(0, 0);
@@ -460,6 +475,8 @@ namespace ZeroProximity.Controls
             {
                 handler(this, e);
             }
+
+            sizeCache = null;
         }
         #endregion
     }

@@ -25,6 +25,8 @@ namespace ZeroProximity.Controls
         /// part will be clipped.
         /// </summary>
         private readonly RectangleGeometry _clippingRectangle;
+
+        public bool AllowMeasureOverrideCache { get; set; }
         
         #region TemplateParts
         /// <summary>
@@ -203,6 +205,8 @@ namespace ZeroProximity.Controls
         }
         #endregion public Size TargetSize
 
+        private Size? sizeCache = null;
+        private double sizeCachePercentage = -1;
         /// <summary>
         /// Occurs when the content changed its size.
         /// </summary>
@@ -224,6 +228,8 @@ namespace ZeroProximity.Controls
             // this control will always follow the TargetSize
             // and allow its content to take all the space it needs
 
+            if (sizeCache != null && Percentage == sizeCachePercentage) return sizeCache.Value;
+
             if (ContentSite != null)
             {
                 // we will adhere to the available size, to allow scrollbars
@@ -236,6 +242,11 @@ namespace ZeroProximity.Controls
                     desiredSize = CalculateDesiredContentSize();
                 }
                 MeasureContent(desiredSize);
+                if (AllowMeasureOverrideCache)
+                {
+                    sizeCache = ContentSite.DesiredSize;
+                    sizeCachePercentage = Percentage;
+                }
                 return ContentSite.DesiredSize;
             }
             return new Size(0, 0);
@@ -459,6 +470,8 @@ namespace ZeroProximity.Controls
             {
                 handler(this, e);
             }
+
+            sizeCache = null;
         }
         #endregion
     }
