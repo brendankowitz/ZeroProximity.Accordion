@@ -916,7 +916,10 @@ namespace ZeroProximity.Controls
             SetLockedProperties();
 
             // At this moment this item has not been added to the panel yet, so we schedule a layoutpass
-            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, LayoutChildren);
+            if (Windows.ApplicationModel.DesignMode.DesignModeEnabled == false && Dispatcher.HasThreadAccess == false)
+                await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, LayoutChildren);
+            else
+                LayoutChildren();
         }
 
         /// <summary>

@@ -929,7 +929,10 @@ namespace ZeroProximity.Controls
             SetLockedProperties();
 
             // At this moment this item has not been added to the panel yet, so we schedule a layoutpass
-            Dispatcher.BeginInvoke(LayoutChildren);
+            if(System.ComponentModel.DesignerProperties.IsInDesignTool == false && Dispatcher.CheckAccess() == false)
+                Dispatcher.BeginInvoke(LayoutChildren);
+            else
+                LayoutChildren();
         }
 
         /// <summary>
