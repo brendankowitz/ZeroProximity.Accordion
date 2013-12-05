@@ -2,10 +2,10 @@
   <PropertyGroup>
     <BaseDir>$(MSBuildProjectDirectory)\Source\</BaseDir>
     <Configuration Condition="'$(Configuration)'==''" >Release</Configuration>
-    <BuildDir>$(BaseDir)build\</BuildDir>
+    <BuildDir>$(BaseDir).build\</BuildDir>
     <PackageDir>$(MSBuildProjectDirectory)\Packages\</PackageDir>
     <SolutionFile>$(BaseDir)ZeroProximity.Accordion.sln</SolutionFile>
-    <MSBuildExtensions>$(MSBuildProjectDirectory)\Source\build\MSBuild.Community.Tasks.dll</MSBuildExtensions>
+    <MSBuildExtensions>$(MSBuildProjectDirectory)\Source\.build\MSBuild.Community.Tasks.dll</MSBuildExtensions>
     <Version Condition="$(Version)==''">0.0.0.0</Version>
   </PropertyGroup>
  
@@ -47,7 +47,7 @@
       Value="%(AsmInfo.Version)" />
  
     <Exec WorkingDirectory="$(BuildDir)" 
-          Command="$(MSBuildProjectDirectory)\Lib\Nuget\nuget.exe pack -OutputDirectory $(PackageDir)  $(PackageDir)temp\ZeroProximityAccordion\ZeroProximity.Accordion.nuspec " />
+          Command="$(MSBuildProjectDirectory)\Source\packages\NuGet.CommandLine.2.7.3\tools\nuget.exe pack -OutputDirectory $(PackageDir)  $(PackageDir)temp\ZeroProximityAccordion\ZeroProximity.Accordion.nuspec " />
 		  
 	<RemoveDir Directories="$(PackageDir)temp" />
   </Target>
